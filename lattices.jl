@@ -1,7 +1,7 @@
 """
 Construct a cubical lattice (3D)
 """
-function cube(Nx::Int, Ny::Int, Nz::Int; kwargs...)
+function cube(Nx::Int, Ny::Int, Nz::Int; kwargs...) :: Tuple{Int64, Graph}
     yperiodic = get(kwargs, :yperiodic, false)
     yperiodic = yperiodic && (Nz > 2)
     yperiodic == true ? error("PBC not yet implemented.") : nothing
@@ -28,5 +28,5 @@ function cube(Nx::Int, Ny::Int, Nz::Int; kwargs...)
       end
     end
 
-    return length(lattPos), latt, lattPos
+    return length(lattPos), latt
 end

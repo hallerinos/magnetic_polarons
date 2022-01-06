@@ -4,7 +4,7 @@ include("lattices.jl")
 include("bonds_plotter.jl")
 
 Nx = Ny = 4
-Nz = 2
+Nz = 1
 
 N, graph = cube(Nx, Ny, Nz)
 plot_graph3d(graph)
